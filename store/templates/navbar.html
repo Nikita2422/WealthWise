@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="header">
+        <div class="header-left">
+            <img src="./store/images/mobile.png" alt="Logo">
+            <span class="logo">Wealth Wise</span>
+        </div>
+        <!-- <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      > -->
+        <div class="header-right">
+            <a href="#">Benefits</a>
+            <a href="#">Security</a>
+            <a href="#">Features</a>
+            <a href="#">About</a>
+            {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+          </li>
+          {% endif %}
+          
+            <a href="#">Contact</a>
+        </div>
+    </div>
